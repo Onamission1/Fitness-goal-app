@@ -17,7 +17,11 @@ const GoalInput = props => {
       <Modal visible={props.visible} animationType="slide">
         <View style={styles.inputContainer}>
         <TextInput  placeholder='Type your fitness goal' style={styles.textInputContainer} onChangeText={goalInputHandler} value={enteredGoal} />
-        <Button title="Add" onPress={addGoalHandler}/>
+        
+        <View style={styles.buttonContainer}>
+        <Button title="Cancel" color="red" onPress={props.onCancel} />
+        <Button title="Add" onPress={addGoalHandler} />
+        </View>
       </View>
       </Modal>
     );
@@ -38,7 +42,15 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         marginBottom: 10
+      },
+      buttonContainer:{
+        flexDirection: "row",
+        justifyContent: "space-around",
+        width: "50%"
       }
+    /* cancelButton: {
+      color: "red"
+    }   */
 });
 
 export default GoalInput;

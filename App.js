@@ -19,12 +19,16 @@ const removeGoalHandler = goalId => {
   setFitnessGoals(currentGoals => {
     return currentGoals.filter((goal) => goal.id !== goalId);
   });
-}
+};
+
+const cancelGoalHandler = () => {
+  setIsAddMode(false);
+};
 
   return (
       <View style={styles.screen}>
         <Button title="Add New Goal" onPress={() => setIsAddMode(true)} />
-        <GoalInput visible={isAddMode} onAddGoal={addGoalHandler} />
+        <GoalInput visible={isAddMode} onAddGoal={addGoalHandler} onCancel={cancelGoalHandler} />
         <FlatList
           data={fitnessGoals}
           renderItem={
