@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
         width: "80%",
         borderColor: 'black',
         borderWidth: 1,
-        padding: 10
+        padding: 10,
+        marginBottom: 10
       }
 });
 

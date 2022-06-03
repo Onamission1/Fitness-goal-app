@@ -12,6 +12,7 @@ const [isAddMode, setIsAddMode] = useState(false);
 
 const addGoalHandler = goalTitle => {
   setFitnessGoals(currentGoals => [...currentGoals, { key: Math.random().toString(), value: goalTitle }]);
+  setIsAddMode(false);
 };
 
 const removeGoalHandler = goalId => {
